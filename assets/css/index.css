@@ -1,0 +1,723 @@
+/* GENERAL BODY SETTINGS */
+:root {
+  --clr-primary: #d9e1e8;
+  --clr-secondary: #9baec8;
+  --clr-accent: #2b90d9;
+  --clr-dark: #282c37;
+  --clr-bg: #f2f2f2;
+
+  --card-defaultsize: 350px;
+  --fs-large: 18px;
+  --fs-medium: 16px;
+  --fs-small: 14px;
+}
+
+
+.sectionText{
+	padding:50px 0px 50px 0px;
+}
+
+section:nth-of-type(2n+3){
+	background-color: var(--clr-bg);
+}
+
+/* LANDING SECTION */
+
+section.hero{
+	height: 100vh;
+	/* Allow to position the background image relative to it */
+	position: relative;
+
+	display: -webkit-box;
+
+	display: -ms-flexbox;
+
+	display: flex;
+}
+
+.hero .presentation{
+	/* Position background relative to the section */
+	position: absolute;
+	/* Whatever the dimension, it will cover the section */
+	background-size: cover;
+	/* Do no repeat background */
+	background-repeat: no-repeat;
+	/* Keep the background in the center, otherwise it gets shifted while resizing */
+	background-position: center;
+	background-color: rgba(0,0,0,0.3);
+	background-blend-mode: overlay;
+	color: white;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.containerColumns{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+
+.presentationText{
+	text-align: center;
+	text-shadow: 0px 4px 3px rgba(0,0,0,0.4), 0px 8px 13px rgba(0,0,0,0.1), 0px 18px 23px rgba(0,0,0,0.1);
+}
+
+.presentationText h1{
+	margin: 15px 5px;
+	font-size: 4em;
+}
+
+.presentationText h2{
+	margin: 15px 5px;
+	font-size: 2em;
+}
+
+.presentationText h4{
+	margin: 10px 5px;
+	font-size: 1.5em;
+}
+
+.presentationText hr{
+	width: 40%;
+}
+
+.hero button{
+	/* General size */
+	margin-top: 30px;
+	font-size: 1.2em;
+	padding: 15px 25px 15px 25px;
+
+	/* Modify borders */
+	border: none;
+	border-radius: 10px;
+
+	/* Handles button's colors */
+	background-color:var(--clr-bg);
+	color:#414a4f;
+
+	/*Different set-up for transform and transforms itself */
+	-webkit-box-shadow: 0px 6px 5px #414a4f;
+	        box-shadow: 0px 6px 5px #414a4f;
+	-webkit-transform: translateY(-6px);
+	    -ms-transform: translateY(-6px);
+	        transform: translateY(-6px);
+	-webkit-transition: -webkit-transform 0.2s ease-in, -webkit-box-shadow 0.2s ease-in;
+	transition: -webkit-transform 0.2s ease-in, -webkit-box-shadow 0.2s ease-in;
+	-o-transition: transform 0.2s ease-in, box-shadow 0.2s ease-in;
+	transition: transform 0.2s ease-in, box-shadow 0.2s ease-in;
+	transition: transform 0.2s ease-in, box-shadow 0.2s ease-in, -webkit-transform 0.2s ease-in, -webkit-box-shadow 0.2s ease-in;
+}
+
+.hero button:hover{
+	cursor: pointer;
+	-webkit-transform: translateY(-3px);
+	    -ms-transform: translateY(-3px);
+	        transform: translateY(-3px);
+	-webkit-box-shadow: 0px 3px 5px #414a4f;
+	        box-shadow: 0px 3px 5px #414a4f;
+}
+
+.hero button:active{
+	/* Make sure button does not change upon clicking on it */
+	border: none;
+	border-radius: 10px;
+	background-color:var(--clr-bg);
+	color:#414a4f;
+
+	/* Handles transform of the button */
+	-webkit-transform: translateY(0px);
+	    -ms-transform: translateY(0px);
+	        transform: translateY(0px);
+	-webkit-box-shadow: none;
+	        box-shadow: none;
+}
+
+.hero button:focus{
+	/* Remove the blue border */
+	outline: 0;
+}
+
+button a{
+	/* Delete all links decoration */
+	text-decoration: none;
+	background-color:var(--clr-bg);
+	color:#414a4f;
+}
+
+/* Just modify the size of the different headings for lower screens */
+@media all and (max-width: 720px){
+	.presentationText h1{
+		font-size: 3em;
+	}
+
+	.presentationText h2{
+		font-size: 1.5em;
+	}
+
+	.presentationText h4{
+		font-size: 1.25em;
+	}
+}
+
+/* WELCOMING MESSAGE */
+
+section.welcomeMessage{
+	min-height: 60vh;
+	width:100%;
+	color: #414a4f;
+	display:-webkit-box;
+	display:-ms-flexbox;
+	display:flex;
+	-webkit-box-orient:vertical;
+	-webkit-box-direction:normal;
+	    -ms-flex-direction:column;
+	        flex-direction:column;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	border-bottom: 2px solid rgba(65, 74, 79, 0.2);
+	position:relative;
+}
+
+section.welcomeMessage::before,
+section.welcomeMessage::after{
+	content:'';
+	position:absolute;
+	width:100px;
+	height:100px;
+	background-color: white;
+	z-index: 10;
+	bottom: -1.268em;
+	border-bottom: 2px solid rgba(65, 74, 79, 0.2);
+}
+
+section.welcomeMessage::before{
+	right:50%;
+	-webkit-transform: skew(0, 20deg);
+	    -ms-transform: skew(0, 20deg);
+	        transform: skew(0, 20deg);
+}
+
+section.welcomeMessage::after{
+	left:50%;
+	-webkit-transform: skew(0, -20deg);
+	    -ms-transform: skew(0, -20deg);
+	        transform: skew(0, -20deg);
+}
+
+
+.welcomeMessage h1{
+	font-size: 3em;
+	text-align: center;
+	font-weight: normal;
+	letter-spacing: 2px;
+	color: var(--clr-dark);
+}
+
+.bioPresentation{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	width: 80%;
+	line-height: 25px;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+
+.bioPicture{
+	width: 400px;
+	height: 400px;
+	background-image: url("../images/ct.jpg");
+	border-radius:500px;
+	/* Whatever the dimension, it will cover the section */
+	background-size: cover;
+	/* Do no repeat background */
+	background-repeat: no-repeat;
+	/* Keep the background in the center, otherwise it gets shifted while resizing */
+	background-position: center;
+	-ms-flex-negative:0;
+	    flex-shrink:0;
+}
+
+.bioText{
+	-ms-flex-preferred-size: 60%;
+	    flex-basis: 60%;
+	font-size: 1.2em;
+	margin-left: 30px;
+	z-index:15;
+}
+
+.bioText a{
+	text-decoration: none;
+	font-style: italic;
+}
+
+.bioText a:visited{
+	color: #414a4f;
+}
+
+.bioText a:hover{
+	color: #1b53ad;
+	text-decoration: underline;
+}
+
+@media all and (max-width: 1000px){
+	.bioPicture{
+		width: 300px;
+		height: 300px;
+	}
+	.bioText{
+		font-size: 1.1em;
+	}
+}
+
+@media all and (max-width: 1000px) and (min-width:800px){
+	.welcomeMessage h1{
+		font-size: 2.5em;
+	}
+
+	.bioPicture{
+		width: 300px;
+		height: 300px;
+	}
+
+	.bioText{
+		font-size: 1.1em;
+	}
+}
+
+@media all and (max-width: 800px){
+	.welcomeMessage h1{
+		margin: 0px 10px 20px 10px;
+		font-size: 2em;
+	}
+
+	.bioPresentation{
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+	}
+
+	.bioText{
+		margin: 30px 0px 0px 0px;
+	}
+}
+
+/* TESTIMONIAL/FAVORITE QUOTE/RECENT PROJECT */
+
+.wrapperTFA{
+	padding: 100px 0px 100px 0px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
+	border-bottom: 2px solid rgba(65, 74, 79, 0.2);
+}
+
+.TFA{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	color: #414a4f;
+	-ms-flex-preferred-size: 25%;
+	    flex-basis: 25%;
+	font-size: 1.2em;
+	padding: 20px;
+	-webkit-transition: background-color 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55), 
+				-webkit-transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55), 
+				-webkit-box-shadow 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	transition: background-color 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55), 
+				-webkit-transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55), 
+				-webkit-box-shadow 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	-o-transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55), 
+				box-shadow 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+				background-color 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55), 
+				box-shadow 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+				background-color 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55), 
+				box-shadow 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+				background-color 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55), 
+				-webkit-transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55), 
+				-webkit-box-shadow 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.TFA:hover{
+	-webkit-transform: translate(10px, -10px);
+	    -ms-transform: translate(10px, -10px);
+	        transform: translate(10px, -10px);
+	-webkit-box-shadow: -3px 3px 20px rgba(65, 74, 79, 0.2) ;
+	        box-shadow: -3px 3px 20px rgba(65, 74, 79, 0.2) ;
+	background-color: rgb(254, 254, 254);
+}
+
+.TFA h1{
+	white-space: nowrap;
+	text-align: center;
+	font-size: 1.8em;
+	font-style: italic;
+	text-transform: uppercase;
+	color: var(--clr-dark);
+}
+
+.TFA .author{
+	font-style: italic;
+	font-size: 0.9em;
+}
+
+@media all and (max-width: 1000px) and (min-width:800px){
+	.wrapperTFA{
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+	}
+
+	.testimonial{
+		-webkit-box-ordinal-group: 0;
+		    -ms-flex-order: -1;
+		        order: -1;
+		-ms-flex-preferred-size: 80%;
+		    flex-basis: 80%;
+	}
+}
+
+@media all and (max-width: 800px){
+	.wrapperTFA{
+		-ms-flex-wrap: nowrap;
+		    flex-wrap: nowrap;
+	}
+
+	.TFA{
+		margin: 20px 30px 20px 30px;
+		width: 80%;
+		font-size: 1.1em;
+	}
+
+	.testimonial{
+		-webkit-box-ordinal-group: 0;
+		    -ms-flex-order: -1;
+		        order: -1;
+	}
+
+	.wrapperTFA{
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+	}
+}
+
+/* CURRICULUM VITAE SECTION */
+
+.wrapperCV{
+	padding-top: 0;
+	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	color: #414a4f;
+	margin-bottom: 5em;
+}
+
+.headerCV{
+	background-image: url("../images/cv_photo.jpg");
+	height: 40vh;
+	width: 100%;
+	/* Position background relative to the section */
+
+	/* Whatever the dimension, it will cover the section */
+	background-size: cover;
+	/* Do no repeat background */
+	background-repeat: no-repeat;
+	/* Keep the background in the center, otherwise it gets shifted while resizing */
+	background-position: center;
+
+	background-attachment: fixed;
+	box-shadow: inset 0 -5px 30px rgba(0,0,0,0.3);
+	display:-webkit-box;
+	display:-ms-flexbox;
+	display:flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+
+.CV_header{
+	position: absolute;
+	text-shadow: 0px 4px 3px rgba(0,0,0,0.4), 0px 8px 13px rgba(0,0,0,0.1), 0px 18px 23px rgba(0,0,0,0.1);
+	font-size: 3em;
+	color: #f2f2f2;
+	text-align: center;
+}
+
+.CV_section{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	line-height: 25px;
+	font-size: 1.1em;
+}
+
+.CV_section{
+	margin-top:50px;
+	width: 70%;
+}
+
+.timeline{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	-webkit-box-align: stretch;
+	    -ms-flex-align: stretch;
+	        align-items: stretch;
+}
+
+.timeline p, .professionalExperience{
+	margin-top: 0;
+	margin-bottom: 25px;
+	width: 75%;
+}
+
+.professionalExperience p{
+	width: 100%;
+	margin-bottom:0;
+}
+.CV_date{
+	color: var(--clr-dark);
+	width: 20%;
+	text-align: right;
+}
+
+.interests p{
+	margin-bottom: 0;
+}
+
+hr{
+	border: 1px solid  rgba(65, 74, 79, 0.1) ;
+	width: 60%;
+}
+
+.interests hr{
+	margin-bottom: 25px;
+}
+
+.CV_section h1{
+	color: var(--clr-dark);
+	text-align: center;
+	margin-bottom:8px;
+	font-weight: normal;
+	font-size: 1.5em;
+	letter-spacing: 2px;
+	line-height: 30px;
+}
+
+.emphasizeCV{
+	color: var(--clr-dark);
+	font-weight: bold;
+	font-style: italic; 
+}
+
+@media all and (max-width: 1000px){
+	.CV_date{
+		-webkit-box-ordinal-group: 0;
+		    -ms-flex-order: -1;
+		        order: -1;
+		text-align: left;
+		-ms-flex-item-align: center;
+		    -ms-grid-row-align: center;
+		    align-self: center;
+		font-size: 1.2em;
+		margin-bottom: 10px;
+		letter-spacing: 2px;
+		width: 100%;
+		text-align: center;
+	}
+
+	.CV_section{
+		width: 90%;
+		font-size: 1em;
+		line-height: 20px;
+		padding: 0px 30px 0px 30px;
+	}
+
+	.timeline{
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+		width: 100%;
+	}
+	.timeline p, .professionalExperience{
+		width: 100%;
+	}
+
+	.interests .timeline{
+		-webkit-box-orient:horizontal;
+		-webkit-box-direction:normal;
+		    -ms-flex-direction:row;
+		        flex-direction:row;
+		-ms-flex-pack: distribute;
+		    justify-content: space-around;
+	}
+
+	.interests .CV_date{
+		-webkit-box-ordinal-group:3;
+		    -ms-flex-order:2;
+		        order:2;
+		font-size: 1em;
+		margin-bottom: 0px;
+		letter-spacing: normal;
+		width: 50%;
+		text-align: right;
+	}
+
+	.CV_section hr{
+		margin-bottom: 20px;
+	}
+}
+
+/* FOOTER */
+
+footer{
+	min-height: 40vh;
+	width: 100%;
+	padding-top: 4em;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	color: white;
+	background-color: var(--clr-dark);
+
+	-webkit-box-pack: center;
+
+	    -ms-flex-pack: center;
+
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+
+/* FOOTER */
+
+footer button{
+	padding: 1em;
+	border-radius: 10px;
+	border: none;
+	font-size: 1.2em;
+	background-color: white;
+	margin-bottom: 1em;
+	color: var(--clr-dark);
+}
+
+footer button:active{
+	/* Make sure button does not change upon clicking on it */
+	border: none;
+	border-radius: 10px;
+	background-color: white;
+	color: var(--clr-dark);
+}
+
+footer button:focus{
+	/* Remove the blue border */
+	outline: 0;
+}
+
+.footer__button a{
+	/* Delete all links decoration */
+	text-decoration: none;
+	background-color: white;
+	color: var(--clr-dark);
+}
+footer button:hover{
+	cursor: pointer;
+}
+
+footer p{
+	width: 80%;
+	text-align: center;
+	font-size: 1.1em;
+}
+
+.footer__copyright{
+	font-size: 0.9em;
+}
+
+.fab{
+	font-size: 4em;
+	color: white;
+}
+
+.socialMedia__list{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	width: 40%;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
+	padding: 1em 0.5em;
+}
+
+@media all and (max-width: 1000px){
+	.fab{
+		font-size: 2em;
+	}
+
+	footer{
+		padding-top:2em;
+	}
+
+	footer button{
+		margin-top: 3em;
+	}
+}

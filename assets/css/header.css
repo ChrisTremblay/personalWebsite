@@ -1,0 +1,140 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: lato;
+	color: var(--clr-dark);
+	font-size: var(--fs-medium);
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+	display:-webkit-box;
+	display:-ms-flexbox;
+	display:flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	overflow-x: hidden;
+
+}
+
+/* NAVIGATION BAR */
+header {
+	/* Positioning on top of the page */
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	color: #414a4f;
+	background-color:var(--clr-bg);
+	z-index:100;
+	/* Flexbox definition */
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+}
+
+header h2 {
+	padding-left: 6%;
+	margin: 0;
+	font-size: 1.3em;
+
+	/* Avoid h2 to break onto 2 lines sometimes which is not great to look at */
+	white-space: nowrap;
+}
+
+nav {
+	/* Same padding as the h2 to be centered */
+	padding-right: 6%;
+}
+
+nav ul {
+	/* Flexbox setting */
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+nav li {
+	/* Put some space between the different sections */
+	margin-left: 10px;
+	margin-right:10px;
+	font-size: 1.1em;
+
+	/* Prevent Portfolio & Studies to break onto two lines */
+	white-space: nowrap;
+	list-style: none;
+}
+
+.navLinks {
+	text-decoration: none;
+	color: #414a4f;
+}
+
+.navLinks:visited {
+	color: #414a4f;
+}
+
+@media all and (max-width: 680px){
+	header{
+		/* Convert navbar in columns */
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+		position: absolute;
+	}
+	nav{
+		padding: 0;
+		margin: 0;
+		width: 80%;
+
+		/* Display flex to center the new line */
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+	}
+	nav ul{
+		padding: 0;
+		margin-top: 5px;
+		/* Allows to wrap the different categories if the screen is really small */
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
+		/* If it wraps, at least center the elements that were wrapped */
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+
+		padding-top:5px;
+		border-top: 1px solid rgba(65, 74, 79, 0.3) ;
+	}
+	nav li{
+		/* Shrink size of the categories */
+		font-size: 1.0em;
+		margin-top: 5px;
+	}
+	header h2{
+		/* Shrink size h2 */
+		font-size: 1.2em;
+		margin: 20px 0px 5px 0px;
+	}
+}

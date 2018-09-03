@@ -1,0 +1,96 @@
+
+/* FOOTER */
+
+footer{
+	min-height: 40vh;
+	width: 100%;
+	padding-top: 4em;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	color: white;
+	background-color: var(--clr-dark);
+
+	-webkit-box-pack: center;
+
+	    -ms-flex-pack: center;
+
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+
+footer button{
+	padding: 1em;
+	border-radius: 10px;
+	border: none;
+	font-size: 1.2em;
+	background-color: white;
+	margin-bottom: 1em;
+	color: var(--clr-dark);
+}
+
+footer button:active{
+	/* Make sure button does not change upon clicking on it */
+	border: none;
+	border-radius: 10px;
+	background-color: white;
+	color: var(--clr-dark);
+}
+
+footer button:focus{
+	/* Remove the blue border */
+	outline: 0;
+}
+
+.footer__button a{
+	/* Delete all links decoration */
+	text-decoration: none;
+	background-color: white;
+	color: var(--clr-dark);
+}
+footer button:hover{
+	cursor: pointer;
+}
+
+footer p{
+	width: 80%;
+	text-align: center;
+	font-size: 1.1em;
+}
+
+.footer__copyright{
+	font-size: 0.9em;
+}
+
+.fab{
+	font-size: 4em;
+	color: white;
+}
+
+.socialMedia__list{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	width: 40%;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
+	padding: 1em 0.5em;
+}
+
+@media all and (max-width: 1000px){
+	.fab{
+		font-size: 2em;
+	}
+	footer{
+		padding-top:2em;
+	}
+	footer button{
+		margin-top: 3em;
+	}
+}
