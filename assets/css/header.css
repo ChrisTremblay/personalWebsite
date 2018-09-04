@@ -2,6 +2,10 @@
 	box-sizing: border-box;
 }
 
+html{
+	scroll-behavior: smooth;
+}
+
 body {
 	font-family: lato;
 	color: var(--clr-dark);
@@ -19,7 +23,6 @@ body {
 	-webkit-box-sizing: border-box;
 	        box-sizing: border-box;
 	overflow-x: hidden;
-
 }
 
 /* NAVIGATION BAR */
