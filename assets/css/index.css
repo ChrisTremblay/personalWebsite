@@ -265,16 +265,19 @@ section.welcomeMessage::after{
 	z-index:15;
 }
 
-.bioText a{
+.bioText a,
+.recentProject a {
 	text-decoration: none;
 	font-style: italic;
 }
 
-.bioText a:visited{
+.bioText a:visited,
+.recentProject a:visited {
 	color: #414a4f;
 }
 
-.bioText a:hover{
+.bioText a:hover,
+.recentProject a:hover {
 	color: #1b53ad;
 	text-decoration: underline;
 }
